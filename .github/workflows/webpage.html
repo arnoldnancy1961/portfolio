@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Navistar Parts Catalog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }
+  .jumbotron {
+      background-color: #0069aa;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #0069aa;
+  }
+  .logo-small {
+      color: #0069aa;
+      font-size: 50px;
+  }
+  .logo {
+      color: #0069aa;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #0069aa;
+  }
+  .carousel-indicators li {
+      border-color: #0069aa;
+  }
+  .carousel-indicators li.active {
+      background-color: #0069aa;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #0069aa;
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #0069aa;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #0069aa !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #0069aa;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #0069aa;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #0069aa !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #0069aa;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #0069aa;
+}
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #0069aa;
+  text-decoration: none;
+  background-color: #000;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #000;
+  text-decoration: none;
+  background-color: #0069aa;
+  outline: 0;
+}
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  color: #777;
+}
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.open > .dropdown-menu {
+  display: block;
+}
+.open > a {
+  outline: 0;
+}
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+  </style>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+   
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Support
+        <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+          <li><a href="#">Parts Suport</a></li>
+          <li><a href="#">Dealer Systems Support</a></li>
+          <li><a href="#">Field Support</a></li> 
+ 	  <li><a href="#">Systems Configuration</a></li>
+          <li><a href="#">System Availability</a></li>
+          <li><a href="#">Troubleshooting</a></li> 
+      
+     </ul>
+</li>
+ <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Training
+        <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+          <li><a href="#">Instructions Word Search</a></li>
+          <li><a href="#">Parts Literature</a></li>
+          <li><a href="#">Training Schedule</a></li> 
+ 	  <li><a href="#">Instructions Visual Search</a></li>
+          <li><a href="#">Instructions Attachments</a></li>
+          <li><a href="#">Re-designed PCO Home Page</a></li> 
+	  <li><a href="#">Cross Reference</a></li>
+    </ul>
+</li>
+<li><a href="#"><span class="glyphicon glyphicon-comment"></span> Feedback</a></li> 
+      <li><a href="#"><span class="glyphicon glyphicon-edit"></span> My Preferences</a></li>       
+<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>      
+<li><a href="#">About</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> View Cart</a></li>
+      <li><a href="#">Checkout</a></li>
+  </ul>
+  </div>
+</nav>
+    
+
+<div class="jumbotron text-center">
+  <h1>Parts Catalog</h1> 
+  <p>Please refer to the "What's New" tab below for recent updates to the Catalog along with several helpful hints</p> 
+  <form class="form-inline">
+    <button class="btn search-btn" type="submit"> <span class="glyphicon glyphicon-search"></span>Search</button>
+                    <div class="form-group">
+                        <input type="text" placeholder="Search" class="form-control search-box" onblur="if (this.value.length == 0) { this.value = 'Search'; }"
+                               onfocus="if (this.value == 'Search') this.value = ''"
+                               value="Search" />
+                    </div>
+     
+  </form>
+</div>
+
+
+
+            
+<div class="container three-col container-fluid color">
+    <div class="col-md-offset-2 col-md-10 color-bar green"></div>
+</div>
+<div class="container three-col container-fluid">
+    <div class="row">
+        <div class="col-md-3 sidebar push40 hidden-sm hidden-xs" >
+            
+<div class="leftRightMenu"><img src="parts.jpg" alt="parts"  /> <nav class="navbar" role="navigation">
+            <h5>
+                
+            </h5>
+
+            
+
+            <div class="navbar  sidebar-navbar">
+                <ul class="nav navbar-nav">
+                    
+                           
+
+                            <ul class="nav nav-pills nav-stacked">
+                               
+                                <li> <a href="" >Catalog Tools</a></li>
+                                <li> <a href="" >International Sites</a></li>
+                                <li> <a href="" >Parts Catalogs</a> </li>
+                                <li>  <a href="" >Parts Letters</a> </li>
+                                <li>  <a href="" >Parts Sales/Marketing</a></li>
+                                <li> <a href="" >Service Programs</a>  </li>
+                                <li> <a href="" >Web Tools</a> </li>
+                                <li> <a href="" >Search Parts Letters</a> </li>
+                              </ul>
+
+                       
+                </ul>
+            </div>
+        </nav>
+</div>
+</div>
+           <div class="col-md-6 col-sm-12 interior-content"> 
+                    <div class="social-share">
+                        <span class='st_sharethis_large' displaytext='ShareThis'></span>
+                        <span class='st_facebook_large' displaytext='Facebook'></span>
+                        <span class='st_twitter_large' displaytext='Tweet'></span>
+                        <span class='st_linkedin_large' displaytext='LinkedIn'></span>
+                        <span class='st_pinterest_large' displaytext='Pinterest'></span>
+                        <span class='st_email_large' displaytext='Email'></span>
+                        <script type="text/javascript">var switchTo5x = true;</script>
+                        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+                        <script type="text/javascript">stLight.options({ publisher: "c6b2c6ec-c6d0-4be7-9bbc-dc15d4cc0ce5", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
+                    </div>
+
+			
+              
+<br>       
+<br> 
+   
+<div class="container">      
+
+ <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#">My Chassis List</a></li>
+    <li><a href="#">My Parts Lists</a></li>
+    <li><a href="#">My Attachments</a></li>
+    <li><a href="#">My Notes</a></li>
+<li><a href="#">What's New</a></li>
+<li><a href="#">iKnow</a></li>
+<li><a href="#">Search  History</a></li>
+  </ul>
+</div>
+
+<!-- Container (About Section) -->
+<div class="container"> 
+  <div class="row">
+&nbsp;&nbsp;&nbsp;
+<span class="glyphicon glyphicon-print"></span>&nbsp;&nbsp;&nbsp;
+<span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;&nbsp;
+<span class="glyphicon glyphicon-question-sign"></span>
+      <h2>List of Vehicles for TOLAS TEST LOCATION</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Chassis No</th>
+        <th>Customer</th>
+        <th>Unit No</th>
+	<th>Model</th>
+	<th>Eng Srl No</th>
+	<th>Build Date</th>
+	<th><span class="glyphicon glyphicon-ok-sign"></span> Warranty</th>
+	<th>Note</th>
+	<th></th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr><td>6B260894</td>	<td></td>	<td></td>	<td>INTEGRATED CE S BUS</td>	<td>2Y0258821</td>	<td>9/9/2005</td>	<td></td>	<td>Add</td>	<td>Attachment</td></tr>
+<tr><td>6H292896</td>	<td>w/16WLS</td><td></td>	<td>4300 SBA 4X2</td>		<td>002081529</td>	<td>8/10/2005</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>7B317610</td>	<td>Laidlaw</td><td>3693</td>	<td>INTEGRATED CE S BUS</td>	<td>2U2103123</td>	<td>1/20/2006</td>	<td>Warranty</td><td>Add</td>	<td>Add</td></tr>
+<tr><td>7C394486</td>	<td>Ryder</td>	<td>253785</td>	 <td>9900I SFA 6X4</td>		<td>079169512</td>	<td>3/28/2006</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>7H437136</td>	<td></td>	<td></td>	<td>4300 SBA 4X2</td>		<td>002130572</td>	<td>6/12/2006</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>8J568735</td>	<td></td>	<td></td>	<td>8600 SBA 6X4</td>		<td>690021676</td>	<td>8/29/2007</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>8J687736</td>	<td>Pilot Trucking</td>	<td>101</td>	<td>4300 SBA 4X2</td>	<td>2U3021406</td>	<td>10/26/2007</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>9C055959</td>	<td>pre402 truck for TSB</td><td>1</td><td>PROSTAR PREMIUM 6X4</td><td>079319419</td>	<td>6/23/2008</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>BH281983</td>	<td></td>	<td></td>	<td>4400 SBA 4X2</td>		<td>003101279</td>	<td>3/12/2010</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>BHA19347</td>	<td>test99</td>	<td></td>	<td></td>			<td></td>		<td></td>		<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>BJ390373</td>	<td></td>	<td></td>	<td>7500 SBA 6X4</td>		<td>000000000</td>	<td>8/26/2010</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>CH050927</td>	<td></td>	<td></td>	<td>TERRASTAR SFA 4X2</td>	<td>2Y5312755</td>	<td>10/12/2011</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>CH448989</td>	<td></td>	<td></td>	<td>7400 SBA 6X4</td>		<td>2Y3401529</td>	<td>3/15/2011</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>CH581984</td>	<td></td>	<td></td>	<td>PROSTAR+ 113 4X2</td>	<td>2Y4117473</td>	<td>5/18/2011</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>CH614571</td>	<td></td>	<td></td>	<td>PROSTAR+ 113 4X2</td>	<td>2Y4125453</td>	<td>8/12/2011</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>CHA18853</td>	<td></td>	<td></td>	<td></td>			<td></td>		<td></td>		<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>CJ648151</td>	<td></td>	<td></td>	<td>TERRASTAR SFA 4X2</td>	<td>2Y5311518</td>	<td>8/18/2011</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>DH244373</td>	<td></td>	<td></td>	<td>TERRASTAR SFA 4X2</td>	<td>2Y5325083</td>	<td>10/25/2012</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>DH323011</td>	<td></td>	<td></td>	<td>4400 SBA 4X2</td>		<td>2Y3433939</td>	<td>8/6/2012</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>DJ256718</td>	<td>Detroit MetroCars</td>	<td>1</td><td>HC/TC COMMERCIAL BUS</td>	<td>2Y5319610</td><td>5/10/2012</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>DN145243</td>	<td>Lone Star Freight</td>	<td>1234</td><td>LONESTAR SFA 6X4</td>	<td>2Y4150300</td><td>5/22/2012</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>EHA65896</td>	<td>Syosset Farms</td>	<td>874</td>	<td>1723</td>		<td>001621361</td>	<td>8/14/1984</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>EHA65897</td>	<td>Reynolds Trucking</td>	<td>2013<td></td><td>1954</td>	<td>000436695</td>	<td>8/14/1984</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>EN498123</td>	<td></td>	<td></td>	<td>9900I SFA 6X4</td>		<td>079640827</td>	<td>2/21/2013</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>EN532262</td>	<td></td>	<td></td>	<td>PROSTAR+ 122 6X4</td>	<td>079650287</td>	<td>4/4/2013</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>EN787233</td>	<td></td>	<td></td>	<td>PROSTAR+ 122 6X4</td>	<td>079665994</td>	<td>6/13/2013</td>	<td>Warranty</td><td>Add</td>	<td>Add</td></tr>
+<tr><td>FH708617</td>	<td></td>	<td></td>	<td>PROSTAR+ 122 6X4</td>	<td>079770340</td>	<td>9/4/2014</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>FN718593</td>	<td></td>	<td></td>	<td>PROSTAR+ 122 6X4</td>	<td>079776007</td>	<td>9/25/2014</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>GB065855</td>	<td>CEBus</td>	<td>LPG</td>	<td>INTEGRATED CE S BUS	</td>	<td>088L04268</td>	<td>5/18/2015</td>	<td>Warranty</td><td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>GB744390</td>	<td>8.8 2CE</td><td></td>	<td>INTEGRATED CE S BUS</td>	<td>088L03687</td>	<td>3/2/2015</td>	<td>Warranty</td><td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>GL220925</td>	<td></td>	<td></td>	<td>7600 SBA 6X4 2010</td>	<td>2Y4403822</td>	<td>6/29/2015</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>GN139874</td>	<td></td>	<td></td>	<td>PROSTAR+ 122 6X4</td>	<td>079824647</td>	<td>4/1/2015</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>HB231909</td>	<td></td>	<td></td>	<td>INTEGRATED CE S BUS	</td>	<td>088L05072</td>	<td>10/22/2015</td>	<td>Warranty</td><td>Add</td>	<td>Add</td></tr>
+<tr><td>HH465400</td>	<td></td>	<td></td>	<td>4300 SBA 4X2</td>		<td>073932840</td>	<td>12/17/2015</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>HN722364</td>	<td></td>	<td></td>	<td>PROSTAR+ 122 6X4</td>	<td>079908540</td>	<td>3/23/2016</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>MC049862</td>	<td></td>	<td></td>	<td>F9370-6X4</td>		<td>011610482</td>	<td>11/23/1990</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>MC049863</td>	<td></td>	<td></td>	<td>F9370-6X4</td>		<td>011612828</td>	<td>12/7/1990</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>MH228078</td>	<td></td>	<td></td>	<td>4700 4X2</td>		<td>000079560</td>	<td>4/25/1990</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>MH228079</td>	<td></td>	<td></td>	<td>4700 4X2</td>		<td>000079699</td>	<td>4/27/1990</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>MH228080</td>	<td></td>	<td></td>	<td>4700 4X2</td>		<td>000080209</td>	<td>5/7/1990</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</tr>
+<tr><td>PC069960</td>	<td>Ryder</td>	<td>698696</td>	<td>9300 6X4 SBA</td>		<td>03ZJ30803</td>	<td>11/2/1992</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>PC070593</td>	<td>Penske</td>	<td>476385</td>	<td>F9370-6X4</td>		<td>034683912</td>	<td>2/9/1993</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>SA069690</td>	<td>Laidlaw</td><td>6785</td>	<td>GENESIS FC BUS</td>		<td>000945189</td>	<td>5/31/1995</td>	<td>Warranty</td><td>Add</td>	<td>Add</td></tr>
+<tr><td>SH200009</td>	<td>Malden Dairy</td><td>2563</td><td>4700 4X2</td>		<td>000932282</td>	<td>2/15/1995</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>SH200015</td>	<td>DJ TRUCKING</td><td>a123</td><td>4954 4X2</td>		<td>000928195</td>	<td>1/23/1995</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>VC010464</td>	<td>Penske</td>	<td>345781</td>	<td>9200 SBA 6X4</td>		<td>034822428</td>	<td>5/29/1996</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>WH560375</td>	<td>Calder Trucking</td>	<td>254	4700 LPX 4X2</td>	<td>000671087</td>	<td>1/9/1998</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>XC020305</td>	<td></td>	<td>9900</td>   <td>SFA 6X4</td>		<td>02WS12702</td>	<td>4/14/1999</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>XC020306</td>	<td>Ryder</td>	<td>25487</td>	<td>OBS - 9300 SFA 6X4</td>	<td>011906076</td>	<td>8/4/1998</td>	<td></td>	<td>Add</td>	<td>Add</td></tr>
+<tr><td>XC093063</td>	<td>Lone Star Trucking</td>	<td>1253</td>	9900 SFA 6X4</td><td>01LW21462</td>	<td>9/1/1998</td>	<td></td>	<td>Chassis Notes</td>	<td>Add</td></tr>
+<tr><td>YC020380</td>	<td>Ryder</td>	<td>258764</td>	<td>9200 SBA 6X4</td>		<td>6R0517565</td>	<td>6/24/1999</td>	<td>Warranty</td><td>Add</td>	<td>Add</td></tr>
+    </tbody>
+  </table>
+ </div> 
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+</body>
+</html>
